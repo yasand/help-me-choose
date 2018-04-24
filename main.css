@@ -1,0 +1,39 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}
+h1 {
+  font-weight: lighter;
+  font-size: 40px;
+  letter-spacing: 5px;
+  margin-bottom: 0px;
+  background-color: lightgrey;
+  color: white
+}
+.inputSection {
+  margin: 30px 0px 5px 0px;
+  width: 400px;
+}
+.inputs {
+  margin: inherit;
+  display: flex;
+  flex-direction: column;
+}
+input {
+  margin-top: 10px
+}
+.addOption {
+  margin-top: 30px;
+}
+
+button {
+  border-radius: 30px;
+  width: 40px;
+  height: 25px;
+  border-color: red;
+  background-color: darkred;
+  color: white;
+}
