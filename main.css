@@ -10,23 +10,18 @@ h1 {
   font-size: 40px;
   letter-spacing: 5px;
   margin-bottom: 0px;
-  background-color: lightgrey;
-  color: white
 }
 .inputSection {
-  margin: 30px 0px 5px 0px;
+  margin: 80px 0px 50px 0px;
   width: 400px;
 }
 .inputs {
-  margin: inherit;
   display: flex;
   flex-direction: column;
 }
-input {
-  margin-top: 10px
-}
+
 .addOption {
-  margin-top: 30px;
+  margin-top: 2px;
 }
 
 button {
