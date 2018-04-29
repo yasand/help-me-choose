@@ -31,6 +31,7 @@ button {
   border-color: red;
   background-color: darkred;
   color: white;
+  margin-top: 15px;
 }
 
 .resultSection {

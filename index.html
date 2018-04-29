@@ -6,15 +6,23 @@
     <link href="./main.css" rel="stylesheet"  type="text/css"> <!--länka till css*-->
   </head>
   <body class="colorChange"> <!--olorChange -> hover h1 change color-->
-    <h1 class="rubrik">Help me choose between....</h1> <!--rubrik -> ...-->
+    <h1 class="start">Help me choose between....</h1> <!--rubrik -> ...-->
+    <h1 class="result">The winner is....</h1>
     <div class="inputSection"> <!--inputSection -> hide when showing result-->
       <div class="inputs"> <!--inputs -> append function-->
         <input placeholder="Something..."></input> <!--placeholder for input-->
       </div>
       <button class="addOption">Add</button> <!--addOption->append function-->
     </div>
-    <div class="resultSection"></div> <!--resultSection -> showing result-->
+    <div class="resultSection">
+
+    </div> <!--resultSection -> showing result-->
     <button class="submit">GO!</button> <!--submit -> submit function-->
+    <button class="back">BACK</button> <!--submit -> submit function-->
+    <br>
+    </div> <!--resultSection -> showing result-->
+
+
     <br>
 
     <div>  <!--image footer-->
@@ -29,7 +37,10 @@
 
       /*input section*/
       $(function() {
+
         $(".resultSection").hide()
+        $(".back").hide()
+        $(".result").hide()
           <!--Hide result section from start-->
        var add_option = function () {
           $('.inputs').append('<input></input>')
@@ -41,10 +52,11 @@
         var options = []  /*create empty array for inputs*/
         /*submit section*/
         var submit  = function() { /*create submit variable that is a function that...*/
-
-            $('h1').text("The winner is...")
             $('.inputSection').hide() /*...find inputSection class and hide it */
             $('.resultSection').css('display', 'flex') /*...find resultSection class and set css value to display */
+            $('.result').show()
+            $('.back').show()
+            $('.start').hide()
             $('input').each(function(){
               options.push($(this).val()) /*...find input class and for each element append it to the option array */
             })
@@ -55,6 +67,16 @@
             $('.resultSection').text(winner)/*find resultSection and display the winner*/
             }
             $('.submit').click(submit) /*submit input on click*/
+          })
+
+          $('.back').click (function(){
+            $('.back').toggle()
+            $('.submit').toggle()
+            $('.result').toggle()
+            $('.start').toggle()
+            $(".resultSection").hide()
+            var options = []
+            $('.inputSection').show()
           })
   /*När resultatet visas, byt ut rubriken från "Help me choose between.." till "The winner is:"*/
 
