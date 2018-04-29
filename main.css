@@ -32,3 +32,11 @@ button {
   background-color: darkred;
   color: white;
 }
+
+.resultSection {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+}

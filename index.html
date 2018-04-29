@@ -3,34 +3,85 @@
   <head>
     <meta charset=utf-8>
     <title>Help me choose</title>
-    <link href="./main.css" rel="stylesheet"  type="text/css">
+    <link href="./main.css" rel="stylesheet"  type="text/css"> <!--länka till css*-->
   </head>
-  <body class="colorChange">
-    <h1 >Help me choose between....</h1>
-    <div class="inputSection">
-      <div class="inputs">
-        <input placeholder="Something..."></input>
-      </div>
-      <button class="addOption">Add</button>
-    </div>
-    <div class="resultSection"></div>
-    <button>GO!</button>
+  <body class="colorChange"> <!--olorChange -> hover h1 change color-->
+    <h1 class="start">Help me choose between....</h1> <!--rubrik start-->
 
+    <div class="inputSection"> <!--inputSection -> hide when showing result-->
+      <div class="inputs"> <!--inputs -> append function-->
+        <input placeholder="Something..."></input> <!--placeholder for input-->
+      </div>
+      <button class="addOption">Add</button> <!--addOption->append function-->
+    </div>
+    <div class="resultSection">
+    </div> <!--resultSection -> showing result-->
+    <button class="submit">GO!</button> <!--submit -> submit function-->
     <br>
-    <div>
-      <!--image bottom of page-->
+
+    <div>  <!--image footer-->
       <img src="förrätt.jpg" alt="Förrrätt" height="112" width="168">
       <img src="fisk.jpg" alt="Fisk" height="112" width="112">
       <img src="vego.jpg" alt="Vego" height="112" width="147">
       <img src="dessert.jpg" alt="Dessert" height="112" width="146">
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+
+      /*input section*/
+      $(function() {
+
+        $(".resultSection").hide()
+          <!--Hide result section from start-->
+        var add_option = function () {
+
+          $('.inputs').append('<input></input>')
+          <!--append a row...-->
+          $('.addOption').click(add_option)
+          <!--...when clicking the add button-->
+        }
+
+        var options = []  /*create empty array for inputs*/
+        /*submit section*/
+        var submit  = function() { /*create submit variable that is a function that...*/
+
+        
 
 
+            $('h1').text("The winner is..")
+            $('.inputSection').hide() /*...find inputSection class and hide it */
+            $('.resultSection').css('display', 'flex') /*...find resultSection class and set css value to display */
+            $('input').each(function(){
+              options.push($(this).val()) /*...find input class and for each element append it to the option array */
+            })
+            console.log(options)
+            /*console.log(options) show resulting array in consol*/
+            var winner = options[Math.floor(Math.random() * options.length)] /*choose a random winner*/
+             /*console.log(winner) show result in console*/
+            $('.resultSection').text(winner)/*find resultSection and display the winner*/
+            }
+            $('.submit').click(submit) /*submit input on click*/
+          })
+  /*När resultatet visas, byt ut rubriken från "Help me choose between.." till "The winner is:"*/
+
+  /*Använd en if-sats för att se till att en input-text bara
+  läggs till options-listan om det finns någon text i det, dvs om värdet inte är "" (tom sträng)*/
+  /*Testa att göra en animation med CSS transitions!
+  Lite enkel inspiration hittar du här:
+  https://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/*/
+
+  /*klick på rubriken byts bakgrundsfärgen ny funktion som körs när du klickar på sidans rubrik*/
+
+        $('h1').hover(function(){/*when hovering over h1*/
+        $('.colorChange').css("background-color", "pink");
+      }, /*change color to pink, inFunction*/
+        function(){
+        $('.colorChange').css("background-color", "white");
+      });/*change color to white, outFunction*/
 
 
 
     </script>
-
   </body>
 </html>
