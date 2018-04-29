@@ -6,16 +6,14 @@
     <link href="./main.css" rel="stylesheet"  type="text/css"> <!--länka till css*-->
   </head>
   <body class="colorChange"> <!--olorChange -> hover h1 change color-->
-    <h1 class="start">Help me choose between....</h1> <!--rubrik start-->
-
+    <h1 class="rubrik">Help me choose between....</h1> <!--rubrik -> ...-->
     <div class="inputSection"> <!--inputSection -> hide when showing result-->
       <div class="inputs"> <!--inputs -> append function-->
         <input placeholder="Something..."></input> <!--placeholder for input-->
       </div>
       <button class="addOption">Add</button> <!--addOption->append function-->
     </div>
-    <div class="resultSection">
-    </div> <!--resultSection -> showing result-->
+    <div class="resultSection"></div> <!--resultSection -> showing result-->
     <button class="submit">GO!</button> <!--submit -> submit function-->
     <br>
 
@@ -31,25 +29,20 @@
 
       /*input section*/
       $(function() {
-
         $(".resultSection").hide()
           <!--Hide result section from start-->
-        var add_option = function () {
-
+       var add_option = function () {
           $('.inputs').append('<input></input>')
+          }
           <!--append a row...-->
           $('.addOption').click(add_option)
           <!--...when clicking the add button-->
-        }
 
         var options = []  /*create empty array for inputs*/
         /*submit section*/
         var submit  = function() { /*create submit variable that is a function that...*/
 
-        
-
-
-            $('h1').text("The winner is..")
+            $('h1').text("The winner is...")
             $('.inputSection').hide() /*...find inputSection class and hide it */
             $('.resultSection').css('display', 'flex') /*...find resultSection class and set css value to display */
             $('input').each(function(){
