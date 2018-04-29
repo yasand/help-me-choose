@@ -46,6 +46,7 @@
           $('.inputs').append('<input></input>')
           }
           <!--append a row...-->
+          
           $('.addOption').click(add_option)
           <!--...when clicking the add button-->
 
@@ -71,14 +72,12 @@
 
           $('.back').click (function(){
             $('.back').toggle()
-            $('.submit').toggle()
             $('.result').toggle()
             $('.start').toggle()
             $(".resultSection").hide()
-            var options = []
+            options=[]
             $('.inputSection').show()
           })
-  /*När resultatet visas, byt ut rubriken från "Help me choose between.." till "The winner is:"*/
 
   /*Använd en if-sats för att se till att en input-text bara
   läggs till options-listan om det finns någon text i det, dvs om värdet inte är "" (tom sträng)*/
